@@ -108,8 +108,17 @@ namespace Journal
             string line;
             while ((line = reader.ReadLine()) != null)
             {
+                line = "ABCDD";
                 Entry entry = new Entry();
-                entry.date = Convert.ToDateTime(line);
+                try
+                {
+                    entry.date = Convert.ToDateTime(line);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
                 entry.prompt = reader.ReadLine();
                 entry.response = reader.ReadLine();
                 entries.Add(entry);

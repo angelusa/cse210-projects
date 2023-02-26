@@ -35,13 +35,11 @@ namespace Scripture
     public class Scripture
     {
         // Attributes
-        private Reference reference;
-        private List<Word> words;
-
-        // Constructor
+        private Reference _reference;
+        private List<Word> words;   // Constructor
         public Scripture(Reference reference, string text)
         {
-            this.reference = reference;
+            this._reference = reference;
             words = new List<Word>();
 
             // Split the text of the scripture into individual words
